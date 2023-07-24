@@ -1,0 +1,14 @@
+<body>
+    <div class="container">
+        <h1>TO DO LIST</h1>
+
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button onclick="addTask()">Add</button>
+            <button onclick="refreshList()">Refresh</button>
+        </div>
+
+        <ul id="taskList">
+        </ul>
+    </div>
+</body>
