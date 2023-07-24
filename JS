@@ -1,0 +1,34 @@
+function addTask(){
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+
+    const taskText = taskInput.value.trim();
+    if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+    }
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+        <input type="radio" onclick="markCompleted(event)">
+        ${taskText}
+        <span class="close" onclick="removeTask(event)">&#215;</span>
+    `;
+    taskList.appendChild(li);
+    taskInput.value = "";
+}
+
+function markCompleted(event) {
+    const li = event.target.parentElement;
+    li.classList.toggle("completed");
+}
+
+function removeTask(event) {
+    const li = event.target.parentElement;
+    li.remove();
+}
+
+function refreshList() {
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+}
